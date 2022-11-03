@@ -11,25 +11,25 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    <h1>Hello, world!</h1>
-    <table id='mytable' class="table table-hover">
+    <h1 class="my-3">Monitoreo de consumo el&eacute;ctrico</h1>
+    <table id='mytable' class="table table-hover my-3">
     <thead>
       <tr>
         <td>id</td>
-        <td>voltaje</td>
-        <td>amperaje</td>
-        <td>tiempo</td>
-        <td>consumo</td>
-        <td>device_id</td>
-        <td>fecha</td>
-        <td>hora</td>
+        <td>Voltaje</td>
+        <td>Amperaje</td>
+        <td>Tiempo</td>
+        <td>Consumo</td>
+        <td>Dispositivo</td>
+        <td>Fecha</td>
+        <td>Hora</td>
       </tr>
     </thead>
     <tbody id='cuerpo'></tbody>
     </table>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
+		<script>const base_url = "{!! env('APP_URL') !!}" </script>
    <script src="{{asset('js/functions.js')}}"></script>
   </body>
 </html>

@@ -1,13 +1,11 @@
 window.addEventListener('load', (event) => {
     
-    // devices();
     sensors();
     recallData();
 });
 
 const recallData = () => {
 
-    // setInterval(devices, 15000);
     setInterval(sensors, 15000);
 }
 
@@ -21,9 +19,6 @@ const sensors = () => {
     .then(async result => {
 
         const table = document.querySelector('#mytable').getElementsByTagName('tbody')[0];
-        // const totalRecords = document.querySelector('#totalRecord');
-
-        // totalRecords.innerHTML = result.length;
 
         cleanTable();
 
@@ -40,10 +35,10 @@ const sensors = () => {
             let cell7 = row.insertCell(7);
 
             cell0.innerHTML = record.id;
-            cell1.innerHTML = record.location;
-            cell2.innerHTML = record.pressure;
-            cell3.innerHTML = record.heart_rate;
-            cell4.innerHTML = record.oxygen;
+            cell1.innerHTML = record.voltaje + ' V';
+            cell2.innerHTML = record.amperaje + ' A';
+            cell3.innerHTML = record.tiempo + ' H';
+            cell4.innerHTML = record.consumo + ' KWH';
             cell5.innerHTML = record.device_id;
             cell6.innerHTML = record.created_at;
             cell7.innerHTML = record.updated_at;
@@ -51,27 +46,6 @@ const sensors = () => {
         
     });
 }
-
-// const devices = () => {
-
-//     for (let id = 1; id <= 6; id++) {
-
-//         const getData = fetch(`${base_url+'/devices/'+id}`, {
-                        
-//             method: 'get'
-//         })
-//         .then(response => response.json())
-//         .then(async result => {
-        
-            
-//             const deviceTotal = document.querySelector(`${'#totalRegistros'+id}`);
-
-//             if (deviceTotal) {
-//                 deviceTotal.innerHTML = result.length;
-//             }
-//         });
-//     }
-// }
 
 const cleanTable = () => {
 

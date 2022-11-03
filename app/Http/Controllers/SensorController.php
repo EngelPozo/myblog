@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Sensor;
 use Illuminate\Http\Request;
 
 class SensorController extends Controller
@@ -18,6 +19,8 @@ class SensorController extends Controller
 
     public function sensors()
     {
-        
+        $request = Sensor::orderBy('id', 'desc')->limit(150)->get();
+
+        return response()->json($request);
     }
 }
